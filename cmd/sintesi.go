@@ -24,4 +24,10 @@ func sintesi() {
 	fmt.Printf("Shell: %s\n", sysinfo.Shell())
 	hardware := sysinfo.LinuxHardware()
 	fmt.Printf("CPU: %s @ %sGHZ\n", hardware.Cpu.Model, hardware.Cpu.MHZ)
+	uptime, err := sysinfo.Uptime()
+	if err != nil {
+		fmt.Printf("Error getting uptime through syscall: %v", err)
+	}
+	fmt.Printf("Uptime: %d hours, %d mins\n", int(uptime.Hours())%24, int(uptime.Minutes())%60)
+	fmt.Printf("Ram: %s\n", hardware.Ram.Total)
 }

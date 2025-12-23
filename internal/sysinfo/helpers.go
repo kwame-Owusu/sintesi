@@ -88,3 +88,43 @@ func getLinuxCpuInfo() *Cpu {
 	processCpuInfo(lines, cpuInfo)
 	return cpuInfo
 }
+
+func processRamInfo(lines []string, ram *Ram) {
+	for _, line := range lines {
+		line = strings.TrimSpace(line)
+
+		if line == "" {
+			continue
+		}
+
+		parts := strings.SplitN(line, ":", 2)
+		if len(parts) != 2 {
+			continue
+		}
+
+		key := strings.TrimSpace(parts[0])
+		value := strings.TrimSpace(parts[1])
+
+		if key == "MemTotal" && ram.Total == "" {
+			ram.Total = value
+		}
+
+		if key == "MemAvailable" && ram.Available == "" {
+			ram.Available = value
+		}
+
+		// Stop early once we have both
+		if ram.Total != " && ram.Available != " {
+			break
+		}
+	}
+
+}
+
+func getLinuxRamInfo() *Ram {
+	ramData := getFile("/proc/meminfo")
+	lines := strings.Split(string(ramData), "\n")
+	ramInfo := &Ram{}
+	processRamInfo(lines, ramInfo)
+	return ramInfo
+}
