@@ -17,8 +17,6 @@ var RootCmd = &cobra.Command{
 }
 
 func sintesi() {
-	fmt.Println("Printing system info...")
-
 	fmt.Printf("Title: %s\n", sysinfo.Title())
 	fmt.Printf("OS: %s\n", sysinfo.OS())
 	fmt.Printf("Kernel: %s\n", sysinfo.Kernel())
@@ -34,4 +32,9 @@ func sintesi() {
 	}
 
 	fmt.Println("Memory:", sysinfo.FormatMemory(hardware.Ram.Total, hardware.Ram.Available))
+	fmt.Println("Terminal:", sysinfo.Terminal())
+	fmt.Println()
+	for i := range 8 {
+		fmt.Printf("\033[10%dm   ", i)
+	}
 }

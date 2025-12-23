@@ -35,6 +35,11 @@ func Uptime() (time.Duration, error) {
 	return time.Duration(info.Uptime) * time.Second, nil
 }
 
+func Terminal() string {
+	terminalEnv := os.Getenv("TERM")
+	return terminalEnv
+}
+
 func LinuxHardware() Hardware {
 	cpu := getLinuxCpuInfo()
 	ram := getLinuxRamInfo()
