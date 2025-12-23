@@ -22,4 +22,6 @@ func sintesi() {
 	fmt.Printf("OS: %s\n", sysinfo.OS())
 	fmt.Printf("Kernel: %s\n", sysinfo.Kernel())
 	fmt.Printf("Shell: %s\n", sysinfo.Shell())
+	hardware := sysinfo.LinuxHardware()
+	fmt.Printf("CPU: %s @ %sGHZ\n", hardware.Cpu.Model, hardware.Cpu.MHZ)
 }

@@ -22,3 +22,9 @@ func Shell() string {
 	shellEnv := strings.Split(os.Getenv("SHELL"), "/")
 	return shellEnv[len(shellEnv)-1]
 }
+
+func LinuxHardware() Hardware {
+	cpu := getLinuxCpuInfo()
+
+	return Hardware{Cpu: cpu}
+}
