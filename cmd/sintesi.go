@@ -17,17 +17,21 @@ var RootCmd = &cobra.Command{
 }
 
 func sintesi() {
-	fmt.Println("printing system info...")
+	fmt.Println("Printing system info...")
+
 	fmt.Printf("Title: %s\n", sysinfo.Title())
 	fmt.Printf("OS: %s\n", sysinfo.OS())
 	fmt.Printf("Kernel: %s\n", sysinfo.Kernel())
 	fmt.Printf("Shell: %s\n", sysinfo.Shell())
+
 	hardware := sysinfo.LinuxHardware()
-	fmt.Printf("CPU: %s @ %sGHZ\n", hardware.Cpu.Model, hardware.Cpu.MHZ)
+
+	fmt.Println("CPU:", sysinfo.FormatCPU(hardware.Cpu))
+
 	uptime, err := sysinfo.Uptime()
-	if err != nil {
-		fmt.Printf("Error getting uptime through syscall: %v", err)
+	if err == nil {
+		fmt.Printf("Uptime: %d hours, %d mins\n", int(uptime.Hours())%24, int(uptime.Minutes())%60)
 	}
-	fmt.Printf("Uptime: %d hours, %d mins\n", int(uptime.Hours())%24, int(uptime.Minutes())%60)
-	fmt.Printf("Ram: %s\n", hardware.Ram.Total)
+
+	fmt.Println("Memory:", sysinfo.FormatMemory(hardware.Ram.Total, hardware.Ram.Available))
 }

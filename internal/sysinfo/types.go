@@ -7,10 +7,10 @@ type Hardware struct {
 
 type Cpu struct {
 	Model string
-	MHZ   string
+	MHZ   float64
 }
 
 type Ram struct {
-	Total     string
-	Available string
+	Total     uint64 // kB
+	Available uint64 // kB
 }
