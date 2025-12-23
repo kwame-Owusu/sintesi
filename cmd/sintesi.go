@@ -21,4 +21,5 @@ func sintesi() {
 	fmt.Printf("Title: %s\n", sysinfo.Title())
 	fmt.Printf("OS: %s\n", sysinfo.OS())
 	fmt.Printf("Kernel: %s\n", sysinfo.Kernel())
+	fmt.Printf("Shell: %s\n", sysinfo.Shell())
 }

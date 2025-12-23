@@ -17,3 +17,8 @@ func Kernel() string {
 	// word, `procver` is []byte so has to be converted
 	return strings.Split(string(procver), " ")[2]
 }
+
+func Shell() string {
+	shellEnv := strings.Split(os.Getenv("SHELL"), "/")
+	return shellEnv[len(shellEnv)-1]
+}
