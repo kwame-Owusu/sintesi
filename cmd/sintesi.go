@@ -2,6 +2,8 @@ package cmd
 
 import (
 	"fmt"
+	"github/kwame-Owusu/sintesi/internal/sysinfo"
+
 	"github.com/spf13/cobra"
 )
 
@@ -16,4 +18,5 @@ var RootCmd = &cobra.Command{
 
 func sintesi() {
 	fmt.Println("printing system info...")
+	fmt.Printf("Title: %s\n", sysinfo.Title())
 }
