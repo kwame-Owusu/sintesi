@@ -5,9 +5,9 @@
 <blockquote align="center">Simple system info fetch utility.</blockquote>
 
 <p>
-  <a href="https://github.com/kwame-Owusu/sintesi/tree/main?tab=MIT-1-ov-file">
-    <img alt="GitHub license" src="https://img.shields.io/github/license/sintesi/sintesi?style=for-the-badge">
-  </a>
+<a href="https://github.com/kwame-Owusu/sintesi/blob/main/LICENSE">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/sintesi/sintesi?style=for-the-badge">
+</a>
   <br>
   Sintesi is a small and fast tool for getting stats about your system. Written in Go, compiles to Linux and macOS
 </p>
@@ -38,11 +38,21 @@ Binaries are provided at the releases page [here](https://github.com/kwame-Owusu
 # Manual Compilation
 
 ```bash
-Manual Compile
-
 git clone https://github.com/kwame-Owusu/sintesi
 cd sintesi
 go get -d ./...
 go build -ldflags "-w -s" # ldflags make the binary smaller
 
 ```
+
+# Usage
+
+Run `sintesi`, and system info will be printed to terminal with ansi colors.
+
+# DEMO
+
+small GIF for sintesi showcase
+
+# License
+
+Sintesi is licensed under the MIT license.[Read Here](https://github.com/kwame-Owusu/sintesi/blob/main/LICENSE) for more info.
