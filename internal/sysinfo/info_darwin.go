@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 func OS() string {
@@ -41,4 +42,11 @@ func Shell() string {
 
 func Terminal() string {
 	return os.Getenv("TERM")
+}
+
+func Uptime() (time.Duration, error) {
+	// Simple version: just return 0 for now
+	// macOS uptime parsing is complex, we'll skip it
+	// TODO parse the return from "uptime" command in macOS
+	return 0, nil
 }

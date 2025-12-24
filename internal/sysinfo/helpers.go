@@ -137,6 +137,12 @@ func FormatCPU(cpu *Cpu) string {
 	return fmt.Sprintf("%s @ %.2f GHz", cpu.Model, cpu.MHZ/1000)
 }
 
+func LinuxHardware() Hardware {
+	cpu := getLinuxCpuInfo()
+	ram := getLinuxRamInfo()
+	return Hardware{Cpu: cpu, Ram: ram}
+}
+
 func GetHardware() Hardware {
 	return LinuxHardware()
 }

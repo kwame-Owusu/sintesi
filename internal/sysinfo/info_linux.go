@@ -32,12 +32,6 @@ func Terminal() string {
 	return terminalEnv
 }
 
-func LinuxHardware() Hardware {
-	cpu := getLinuxCpuInfo()
-	ram := getLinuxRamInfo()
-	return Hardware{Cpu: cpu, Ram: ram}
-}
-
 func Uptime() (time.Duration, error) {
 	var info syscall.Sysinfo_t
 	err := syscall.Sysinfo(&info)
