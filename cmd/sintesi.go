@@ -48,7 +48,7 @@ func sintesi() {
 	fmt.Println()
 	fmt.Println()
 	for i := 0; i < maxLines; i++ {
-		// Left (bunny)
+		// Left (cat)
 		if i < len(cat) {
 			fmt.Printf("%-12s", cat[i])
 		} else {
