@@ -1,3 +1,5 @@
+//go:build linux
+
 package sysinfo
 
 import (
@@ -25,16 +27,6 @@ func Shell() string {
 	return shellEnv[len(shellEnv)-1]
 }
 
-func Uptime() (time.Duration, error) {
-	var info syscall.Sysinfo_t
-	err := syscall.Sysinfo(&info)
-	if err != nil {
-		return 0, err
-	}
-
-	return time.Duration(info.Uptime) * time.Second, nil
-}
-
 func Terminal() string {
 	terminalEnv := os.Getenv("TERM")
 	return terminalEnv
@@ -44,4 +36,14 @@ func LinuxHardware() Hardware {
 	cpu := getLinuxCpuInfo()
 	ram := getLinuxRamInfo()
 	return Hardware{Cpu: cpu, Ram: ram}
+}
+
+func Uptime() (time.Duration, error) {
+	var info syscall.Sysinfo_t
+	err := syscall.Sysinfo(&info)
+	if err != nil {
+		return 0, err
+	}
+
+	return time.Duration(info.Uptime) * time.Second, nil
 }

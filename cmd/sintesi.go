@@ -72,7 +72,7 @@ func sintesi() {
 }
 
 func infoLines() []string {
-	hardware := sysinfo.LinuxHardware()
+	hardware := sysinfo.GetHardware()
 
 	lines := []string{
 		lightPink + sysinfo.Title() + reset,
