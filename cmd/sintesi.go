@@ -8,13 +8,14 @@ import (
 )
 
 const (
-	reset   = "\033[0m"
-	red     = "\033[31m"
-	green   = "\033[32m"
-	yellow  = "\033[33m"
-	blue    = "\033[34m"
-	magenta = "\033[35m"
-	cyan    = "\033[36m"
+	reset     = "\033[0m"
+	red       = "\033[31m"
+	green     = "\033[32m"
+	yellow    = "\033[33m"
+	blue      = "\033[34m"
+	magenta   = "\033[35m"
+	cyan      = "\033[36m"
+	lightPink = "\033[38;5;218m" // soft pastel pink
 )
 
 var cat = []string{
@@ -74,14 +75,14 @@ func infoLines() []string {
 	hardware := sysinfo.LinuxHardware()
 
 	lines := []string{
-		red + sysinfo.Title() + reset,
+		lightPink + sysinfo.Title() + reset,
 		green + "OS:      " + reset + sysinfo.OS(),
 		yellow + "Kernel:  " + reset + sysinfo.Kernel(),
 		blue + "Shell:   " + reset + sysinfo.Shell(),
 		magenta + "CPU:     " + reset + sysinfo.FormatCPU(hardware.Cpu),
 		green + "Memory:  " + reset +
 			sysinfo.FormatMemory(hardware.Ram.Total, hardware.Ram.Available),
-		yellow + "Terminal:" + reset + " " + sysinfo.Terminal(),
+		red + "Terminal:" + reset + " " + sysinfo.Terminal(),
 	}
 
 	uptime, err := sysinfo.Uptime()
