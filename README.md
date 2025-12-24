@@ -33,7 +33,15 @@ current computer and the cat looks cute as well ;).
 
 # Install
 
-Binaries are provided at the releases page [here](https://github.com/kwame-Owusu/sintesi/releases/). Or, you can just run go install `github.com/kwame-Owusu/sintesi@latest`
+Binaries are provided at the releases page [here](https://github.com/kwame-Owusu/sintesi/releases/). Or, you can just run go install `github.com/kwame-Owusu/sintesi@latest`.
+
+Aternatively it can also be installed through my personal homebrew tap:
+
+```
+brew tap kwame-Owusu/taps https://github.com/kwame-Owusu/homebrew-taps
+brew install sintesi
+sintesi --version
+```
 
 # Manual Compilation
 
@@ -49,10 +57,10 @@ go build -ldflags "-w -s" # ldflags make the binary smaller
 
 Run `sintesi`, and system info will be printed to terminal with ansi colors.
 
-# DEMO
+# Demo
 
 small GIF for sintesi showcase
 
 # License
 
-Sintesi is licensed under the MIT license.[Read Here](https://github.com/kwame-Owusu/sintesi/blob/main/LICENSE) for more info.
+Sintesi is licensed under the MIT license. [Read Here](https://github.com/kwame-Owusu/sintesi/blob/main/LICENSE) for more info.
