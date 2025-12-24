@@ -45,7 +45,7 @@ Aternatively it can also be installed through my personal homebrew tap:
 ```
 brew tap kwame-Owusu/taps https://github.com/kwame-Owusu/homebrew-taps
 brew install sintesi
-sintesi --version
+sintesi --help
 ```
 
 # Manual Compilation
