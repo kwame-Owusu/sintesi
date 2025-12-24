@@ -5,7 +5,7 @@
 <blockquote align="center">Simple system info fetch utility.</blockquote>
 
 <p>
-  <a href="https://github.com/kwame-Owusu/sintesi/blob/main/LICENSE">
+  <a href="https://github.com/kwame-Owusu/sintesi/tree/main?tab=MIT-1-ov-file">
     <img alt="GitHub license" src="https://img.shields.io/github/license/sintesi/sintesi?style=for-the-badge">
   </a>
   <br>
