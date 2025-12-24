@@ -30,6 +30,11 @@
 
 Wanted to make a utility tool that is fast and simple to showcase important information about
 current computer and the cat looks cute as well ;).
+# Demo
+
+![sintesi-gif](https://github.com/user-attachments/assets/2079ec9c-d3bc-466a-8c35-5f47c3be9cec)
+
+
 
 # Install
 
@@ -56,10 +61,6 @@ go build -ldflags "-w -s" # ldflags make the binary smaller
 # Usage
 
 Run `sintesi`, and system info will be printed to terminal with ansi colors.
-
-# Demo
-
-small GIF for sintesi showcase
 
 # License
 
