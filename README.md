@@ -6,7 +6,7 @@
 
 <p>
 <a href="https://github.com/kwame-Owusu/sintesi/blob/main/LICENSE">
-  <img alt="GitHub license" src="https://img.shields.io/github/license/sintesi/sintesi?style=for-the-badge">
+  <img alt="GitHub license" src="https://img.shields.io/github/license/kwame-Owusu/sintesi?style=for-the-badge">
 </a>
   <br>
   Sintesi is a small and fast tool for getting stats about your system. Written in Go, compiles to Linux and macOS
