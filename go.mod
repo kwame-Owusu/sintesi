@@ -1,4 +1,4 @@
-module github/kwame-Owusu/sintesi
+module github.com/kwame-Owusu/sintesi
 
 go 1.25.5
 
